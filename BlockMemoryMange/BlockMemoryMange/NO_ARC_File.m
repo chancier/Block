@@ -1,10 +1,7 @@
-//
-//  NO_ARC_File.m
-//  BlockMemoryMange
-//
-//  Created by chen on 14-11-26.
-//  Copyright (c) 2014年 chen. All rights reserved.
-//
+/*
+ *（1） block不是Object对象，所以对retain无效，要想保留block生命周期，最好通过copy来实现，当然copy后，要记得release。如果不想手动管理，就通过[［[testBlock] copy] autorelease]来管理。
+  （2）我们知道一般被block的应用的对象，retainCount会自动加一，为了打破这种 retain circle，可以在对象前加__block，这样block块就不会维护这个对象了
+ */
 
 #import "NO_ARC_File.h"
 #import "BlockeObj.h"
@@ -19,13 +16,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    self.view.backgroundColor = [UIColor whiteColor];
+    /*
+     错误 block会自动加1
+     */
     BlockeObj *testA =[[BlockeObj alloc] initBlock:^{
-        
         [testA action];
-        
         [ testA release];
-        
     }];
+    
+    
+    /*
+     修改
+     */
+    __block BlockeObj *testB =[[BlockeObj alloc] initBlock:^{
+        [testB action];
+        [testB release];
+    }];
+    
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)dismiss
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

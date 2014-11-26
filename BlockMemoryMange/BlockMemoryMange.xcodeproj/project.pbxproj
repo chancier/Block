@@ -14,7 +14,7 @@
 		749A58E21A25864100A14A16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749A58E11A25864100A14A16 /* Images.xcassets */; };
 		749A58E51A25864100A14A16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749A58E31A25864100A14A16 /* LaunchScreen.xib */; };
 		749A58F11A25864100A14A16 /* BlockMemoryMangeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 749A58F01A25864100A14A16 /* BlockMemoryMangeTests.m */; };
-		749A58FC1A2586B400A14A16 /* NO_ARC_File.m in Sources */ = {isa = PBXBuildFile; fileRef = 749A58FB1A2586B400A14A16 /* NO_ARC_File.m */; settings = {COMPILER_FLAGS = "－fno-arc-obj"; }; };
+		749A58FC1A2586B400A14A16 /* NO_ARC_File.m in Sources */ = {isa = PBXBuildFile; fileRef = 749A58FB1A2586B400A14A16 /* NO_ARC_File.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		749A58FF1A25873200A14A16 /* BlockeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 749A58FE1A25873200A14A16 /* BlockeObj.m */; };
 /* End PBXBuildFile section */
 
@@ -426,6 +426,7 @@
 				749A58F61A25864100A14A16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		749A58F71A25864100A14A16 /* Build configuration list for PBXNativeTarget "BlockMemoryMangeTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +435,7 @@
 				749A58F91A25864100A14A16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
